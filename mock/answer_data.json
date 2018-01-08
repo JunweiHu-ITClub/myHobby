@@ -1,0 +1,197 @@
+{
+  "status": 1,
+  "message": "成功",
+  "pageNo": 0,
+  "pageSize": 0,
+  "totalCount": 0,
+  "body": [
+    {
+      "questionId": 11,
+      "storeId": 3,
+      "questionDesc": "1. 国航航班号前面的英文缩写字母是什么？ \r\n",
+      "result": "A、CA",
+      "questionType": 1,
+      "questionSort": 1,
+      "createTime": "2018-01-02 16:50:43",
+      "status": 1,
+      "marketQuestionResults": [
+        {
+          "resultId": 21,
+          "questionId": 11,
+          "resultDesc": "A、CA",
+          "createTime": "2018-01-03 16:46:32",
+          "status": 1
+        },
+        {
+          "resultId": 22,
+          "questionId": 11,
+          "resultDesc": "B、AC",
+          "createTime": "2018-01-03 16:46:41",
+          "status": 1
+        }
+      ],
+      "marketQuestionReward": {
+        "id": 11,
+        "questionId": 11,
+        "memberId": null,
+        "rewardType": 1,
+        "rewardValue": 1,
+        "rewardStock": 321,
+        "rewardDesc": "里程",
+        "createTime": "2017-12-27 15:32:22",
+        "status": 1
+      }
+    },
+    {
+      "questionId": 12,
+      "storeId": 3,
+      "questionDesc": "2.国航客服电话是______。",
+      "result": "A、95583",
+      "questionType": 1,
+      "questionSort": 2,
+      "createTime": "2018-01-02 16:50:46",
+      "status": 1,
+      "marketQuestionResults": [
+        {
+          "resultId": 23,
+          "questionId": 12,
+          "resultDesc": "A.95583",
+          "createTime": "2018-01-03 16:46:52",
+          "status": 1
+        },
+        {
+          "resultId": 24,
+          "questionId": 12,
+          "resultDesc": "B.38559",
+          "createTime": "2018-01-03 16:47:06",
+          "status": 1
+        }
+      ],
+      "marketQuestionReward": {
+        "id": 12,
+        "questionId": 12,
+        "memberId": null,
+        "rewardType": 1,
+        "rewardValue": 5,
+        "rewardStock": 321,
+        "rewardDesc": "里程",
+        "createTime": "2017-12-27 15:32:22",
+        "status": 1
+      }
+    },
+    {
+      "questionId": 13,
+      "storeId": 3,
+      "questionDesc": "3. 中国国际航空公司的标志是一只美丽吉祥的凤凰，它是由______三个字母演变而来。",
+      "result": "A.V.I.P",
+      "questionType": 1,
+      "questionSort": 3,
+      "createTime": "2018-01-02 16:50:50",
+      "status": 1,
+      "marketQuestionResults": [
+        {
+          "resultId": 25,
+          "questionId": 13,
+          "resultDesc": "A.V.I.P",
+          "createTime": "2018-01-03 16:47:16",
+          "status": 1
+        },
+        {
+          "resultId": 26,
+          "questionId": 13,
+          "resultDesc": "B.M.V.P",
+          "createTime": "2018-01-03 16:47:27",
+          "status": 1
+        }
+      ],
+      "marketQuestionReward": {
+        "id": 13,
+        "questionId": 13,
+        "memberId": null,
+        "rewardType": 1,
+        "rewardValue": 10,
+        "rewardStock": 321,
+        "rewardDesc": "里程",
+        "createTime": "2017-12-27 15:32:22",
+        "status": 1
+      }
+    },
+    {
+      "questionId": 14,
+      "storeId": 3,
+      "questionDesc": "4.国航的常旅客计划名称为__________。",
+      "result": "A.“凤凰知音”",
+      "questionType": 1,
+      "questionSort": 4,
+      "createTime": "2018-01-02 16:50:55",
+      "status": 1,
+      "marketQuestionResults": [
+        {
+          "resultId": 27,
+          "questionId": 14,
+          "resultDesc": "A. “凤凰知音”",
+          "createTime": "2018-01-03 16:47:41",
+          "status": 1
+        },
+        {
+          "resultId": 28,
+          "questionId": 14,
+          "resultDesc": "B.“孔雀知音”",
+          "createTime": "2018-01-03 16:47:51",
+          "status": 1
+        }
+      ],
+      "marketQuestionReward": {
+        "id": 14,
+        "questionId": 14,
+        "memberId": null,
+        "rewardType": 1,
+        "rewardValue": 15,
+        "rewardStock": 321,
+        "rewardDesc": "里程",
+        "createTime": "2017-12-27 15:32:22",
+        "status": 1
+      }
+    },
+    {
+      "questionId": 15,
+      "storeId": 3,
+      "questionDesc": "5.知音宝贝儿童卡，是专为_______周岁的儿童设计的卡。\r\nA.1-11\r\nB.2-12\r\n5.知音宝贝儿童卡，是专为_______周岁的儿童设计的卡。",
+      "result": "B.2-12",
+      "questionType": 1,
+      "questionSort": 5,
+      "createTime": "2018-01-02 16:50:57",
+      "status": 1,
+      "marketQuestionResults": [
+        {
+          "resultId": 29,
+          "questionId": 15,
+          "resultDesc": "A.1-11",
+          "createTime": "2018-01-03 16:48:00",
+          "status": 1
+        },
+        {
+          "resultId": 30,
+          "questionId": 15,
+          "resultDesc": "B.2-12",
+          "createTime": "2018-01-03 16:48:21",
+          "status": 1
+        }
+      ],
+      "marketQuestionReward": {
+        "id": 15,
+        "questionId": 15,
+        "memberId": null,
+        "rewardType": 1,
+        "rewardValue": 20,
+        "rewardStock": 321,
+        "rewardDesc": "里程",
+        "createTime": "2018-01-04 10:15:21",
+        "status": 1
+      }
+    }
+  ],
+  "reqId": null,
+  "respId": null,
+  "success": true
+}

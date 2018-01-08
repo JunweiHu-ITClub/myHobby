@@ -1,0 +1,50 @@
+.turntable-bg {
+  /* margin-top: 50px; */
+  /* margin-left: 55px; */
+  width: 7.5rem;
+  height: 5.82rem;
+  background: url(../../static/images/deng.gif) no-repeat center top;
+  background-size: cover;
+  position: relative;
+}
+.turntable-bg .mask {
+  width: 454px;
+  height: 451px;
+  position: absolute;
+  left: 116px;
+  top: 60px;
+}
+.turntable-bg .pointer {
+  width: 19.6%;
+  position: absolute;
+  top: 50%;
+  margin-left: -0.735rem;
+  margin-top: -0.775rem;
+  z-index: 13;
+  left: 50%;
+}
+.pointer img{
+  width: 100%;
+}
+/*.turntable-bg .rotate {*/
+  /*width: 500px;*/
+  /*height: 500px;*/
+  /*position: absolute;*/
+  /*left: 128px;*/
+  /*top: 38px;*/
+/*}*/
+/*#rotate{*/
+  /*width: 50%;*/
+  /*position: absolute;*/
+  /*z-index: 11;*/
+  /*left: -66px;*/
+  /*top: 5px;*/
+/*}*/
+/*#rotate_active{*/
+  /*width: 19%;*/
+  /*position: absolute;*/
+  /*z-index: 11;*/
+  /*margin-left: -15px;*/
+  /*top: 15px;*/
+  /*!* display: none; *!*/
+/*}*/

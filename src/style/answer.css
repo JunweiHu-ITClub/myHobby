@@ -1,0 +1,248 @@
+/*html{ font-size: 62.5%;}*/
+.wrap{ width: 100%; max-width: 750px; text-align: center; overflow: hidden;}
+.voice_img{
+    width:100%;
+    top: 5%;
+    right: 2%;
+    position: absolute;
+    display: inline-block;
+}
+.answer_02{
+    width:100%;
+    height: 2.12rem;
+    background: url(../../static/images/answer_02.jpg) no-repeat center top;
+    background-size: cover;
+    position: relative;
+}
+.answer_03{
+    width:100%;
+    height: 1.22rem;
+    background: url(../../static/images/answer_03.jpg) no-repeat center top;
+    background-size: cover;
+}
+.answer_04{
+    width:100%;
+    height: 1.35rem;
+    background: url(../../static/images/answer_04.jpg) no-repeat center top;
+    background-size: cover;
+}
+.answer_05{
+    width:100%;
+    height: 5.65rem;
+    background: url(../../static/images/answer_05.jpg) no-repeat center top;
+    background-size: cover;
+}
+.answer_06{
+    width:100%;
+    height: 1.72rem;
+    background: url(../../static/images/answer_06.jpg) no-repeat center top;
+    background-size: cover;
+}
+.answer_04 ul{
+    width: 76.53%;
+    margin: 0 auto;
+}
+.answer_04 li{
+    width: 4.55%;
+    height: 0.26rem;
+    margin-right: 19.3125%;
+    float: left;
+    background: url(../../static/images/answer_radio_05.jpg) no-repeat center top;
+    background-size: cover;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+.answer_04 .answer_list_active{
+    width: 4.55%;
+    height: 0.26rem;
+    background: url(../../static/images/answer_radio_03.jpg) no-repeat center top;
+    background-size: cover;
+}
+.answer_04 li:last-child{
+    margin-right: 0;
+}
+.answer_04_text{
+    width: 76.53%;
+    margin: 0 auto;
+    padding-top: 0.6rem;
+    font-size: 0.28rem;
+    color:#4d4d4d;
+}
+.answer_04_text p{
+    display: inline-block;
+}
+.answer_text_left{
+    float: left;
+}
+.answer_text_right{
+    float: right;
+}
+.answer_04_text p span{
+    font-size: 0.36rem;
+    color:#5966fc;
+}
+.answer_question,.answer_button{
+    width: 76.53%;
+    margin: 0 auto;
+}
+.question_number{
+    width: 10.45%;
+    margin-left: 7%;
+    margin-top: 0.4rem;
+    float: left;
+    color: #ffc000;
+    font-size: 0.32rem;
+}
+.question_con{
+    width: 80%;
+    padding-top: 0.4rem;
+    margin: 0 auto;
+    float: left;
+    text-align: left;
+    text-indent: 20px;
+    color: #4d4d4d;
+    font-size: 0.28rem;
+}
+.answer_button button{
+    width: 86.4%;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 0.32rem;
+    border:0;
+    color:white;
+}
+.buttom_a{
+    background: url("../../static/images/button_03.png") no-repeat center top;
+    background-size: contain;
+    padding-left: 10.23%;
+}
+.buttom_b{
+    background: url("../../static/images/button_06.png") no-repeat center top;
+    background-size: contain;
+    margin-top: 0.3rem;
+    padding-left: 10.23%;
+}
+.buttom_c{
+    background: url("../../static/images/button_07.png") no-repeat center top;
+    background-size: contain;
+    margin-top: 0.3rem;
+    padding-left: 10.23%;
+}
+.buttom_a i{
+    width: 11.67%;
+    height: 0.46rem;
+    margin-top: 0.23rem;
+    background: url("../../static/images/option_icon.png") no-repeat center top;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4.35%;
+    float: right;
+}
+.buttom_c i{
+    width: 8.3%;
+    height: 0.5rem;
+    margin-top: 0.23rem;
+    background: url("../../static/images/option_wrong_icon.png") no-repeat center top;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4.35%;
+    float: right;
+}
+.next_question{
+    width: 71.2%;
+    margin: 0 auto;
+}
+.next_question p{
+    width: 100%;
+    height: 0.95rem;
+    line-height: 0.75rem;
+    background: url("../../static/images/next_question.png") no-repeat center top;
+    background-size: contain;
+    margin-top: 0.4rem;
+    display: inline-block;
+    font-size: 0.36rem;
+    color:white;
+}
+.clearfix{
+    clear: both;
+}
+/*去登录弹框*/
+.alert_wrap{
+    width: 100%;
+    height: 100%;
+    background: url("../../static/images/bg.png") repeat;
+    position: fixed;
+    z-index: 99999;
+    top:0;
+    display: none;
+}
+.paper_clip{
+    width: 16.5%;
+    height: 1.29rem;
+    background: url(../../static/images/biezhen.png) no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: absolute;
+    margin-top: -0.4rem;
+    margin-left: 0.2rem;
+}
+.colse{
+    width: 6.7%;
+    height: 0.65rem;
+    background: url(../../static/images/close.png) no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: absolute;
+    margin-top: -0.65rem;
+    right: 0.2rem;
+}
+.gift_close{
+    width: 6.7%;
+    height: 0.65rem;
+    background: url(../../static/images/close.png) no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: absolute;
+    margin-top: -0.65rem;
+    right: 11.5% !important;
+}
+.alert_already_con{
+    width: 80.5%;
+    height: 4.76rem;
+    background: url("../../static/images/alet_small_bg.png") no-repeat;
+    background-size: contain;
+    margin-left:9.75%;
+    margin-top: 4rem;
+    font-family: 微软雅黑;
+    font-size: 0.24rem;
+    color: #333333;
+}
+.alert_already_con h2{
+    width: 100%;
+    margin:0 auto;
+    font-family: 微软雅黑;
+    font-size: 0.4rem;
+    color: #333333;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.4rem;
+}
+.alert_already_con p{
+    text-align: center;
+}
+.alert_login_button{
+    width: 62.9%;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    margin:0 auto;
+    background:url("../../static/images/login_button.png") no-repeat;
+    background-size: contain;
+    font-family: 微软雅黑;
+    font-size: 0.32rem;
+    color: white;
+    margin-top:0.65rem;
+}
