@@ -113,16 +113,17 @@
     border:0;
     color:white;
 }
-.buttom_a{
-    background: url("../../static/images/button_03.png") no-repeat center top;
-    background-size: contain;
-    padding-left: 10.23%;
-}
+
 .buttom_b{
     background: url("../../static/images/button_06.png") no-repeat center top;
     background-size: contain;
     margin-top: 0.3rem;
     padding-left: 10.23%;
+}
+.buttom_a{
+  background: url("../../static/images/button_03.png") no-repeat center top;
+  background-size: contain;
+  padding-left: 10.23%;
 }
 .buttom_c{
     background: url("../../static/images/button_07.png") no-repeat center top;

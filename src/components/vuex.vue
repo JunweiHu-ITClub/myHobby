@@ -3,8 +3,8 @@
     <div class="wrap">
       <div class="answer_02">
         <div class="voice_img">
-          <!--<audio src="../../static/video/music.ogg" autoplay="autoplay" loop="loop" id="audio_id"></audio>-->
-          <img src="images/m01.png">
+          <audio src="../../static/video/music.ogg" autoplay="autoplay" loop="loop" id="audio_id"></audio>
+          <img src="../../static/images/m01.png">
         </div>
       </div>
       <div class="answer_03">
@@ -24,7 +24,7 @@
               本题可获得里程数:&nbsp;<span class="gain_mileage">{{item.marketQuestionReward.rewardValue}}</span>
             </p>
             <p class="answer_text_right">
-              已获得里程数:&nbsp;<span class="gained_mileage">{{totalMileage}}</span>
+              已获得里程数:&nbsp;<span class="gained_mileage">{{ totalMileage }}</span>
             </p>
           </div>
         </div>
@@ -34,16 +34,16 @@
             <p class="question_con">{{item.questionDesc}}</p>
           </div>
           <div class="answer_button">
-            <button type="button" :class="{ buttom_b:checkDefault, buttom_a: checkTrue, buttom_c: checkError }"
+            <button type="button" class="buttom_b" :class="{ buttom_a: index===checkTrue, buttom_c: index===checkError }"
                     v-for="(val,index) in item.marketQuestionResults"
-                    @click="addMileage(index,val.resultId,val.questionId,item.result,val.resultDesc)"
-                    :disabled="disabled"
-                    :key="val.resultId">{{val.resultDesc}}<i></i></button>
+                    @click="btnClick(val,item,index)"
+                    :key="val.resultId"
+                    :disabled="disabled">{{val.resultDesc}}<i></i></button>
           </div>
         </div>
       </div>
       <div class="answer_06">
-        <div class="next_question" @click="nextQuestion">
+        <div class="next_question" @click="increment">
           <p>{{nextText}}</p>
         </div>
       </div>
@@ -63,36 +63,90 @@
       </div>
     </div>
   </div>
+  <!--<div id="app">
+    <p>{{ count }}</p>
+    <p>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+    </p>
+  </div>-->
 </template>
 
 <script>
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import { mapState, mapActions } from 'vuex'
-// import Qs from 'qs' // 表单序列化插件
-// import _ from 'lodash'
-
+import Vuex from 'vuex'
+Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
+const store = new Vuex.Store({
+  state: {
+    totalMileage: 0,
+    mark: 0,
+    answerId: [],
+    quesId: []
+  },
+  mutations: {
+    increment (state,data) {
+      state.totalMileage = state.totalMileage+data
+    },
+    showIndex (state) {
+      state.mark++
+    },
+    answerId (state,data) {
+      state.answerId.push(data.choosedId)
+      state.quesId.push(data.choosedQuesId)
+    }
+  }
+})
+
 export default {
+  store,
   name: 'vuexName',
   data () {
     return {
-      itemId: null, //题目ID
-      choosedNum: null, //选中答案索引
-      choosedId:null //选中答案id
+      questionData: [],
+      nextText : '下一题',
+      choosedIndex: null,
+      choosedId:null,
+      choosedQuesId: null,
+      disabled:false,
+      checkTrue: -1,
+      checkError: -1,
     }
   },
   created () {
     let vm = this
-    vm.getAnswerList()
+    vm.listInit()
   },
   computed: {
-
+    totalMileage () {
+      return store.state.totalMileage
+    },
+    mark (){
+      return store.state.mark
+    }
   },
   methods: {
-    getAnswerList: function () {
+    increment () {
+      this.disabled = false
+      if(store.state.mark < 4){
+        if(this.choosedIndex!=null){
+          this.choosedIndex = null
+          store.commit('answerId',{choosedId:this.choosedId,choosedQuesId:this.choosedQuesId})
+          store.commit('showIndex')
+          this.checkTrue = -1
+          this.checkError = -1
+        }else{
+          alert('请先选择答案')
+        }
+      }else{
+        this.nextText = '速速去抽奖'
+      }
+
+    },
+    listInit () {
       let vm = this
       vm.axios.get('/api/answer_data')
       // vm.axios.post('http://10.10.99.67:8651/services/getMarketQuestion', {'storeId': null})
@@ -103,28 +157,17 @@ export default {
           console.log('Error! Could not reach the API. ' + error)
         })
     },
-    addMileage: function (index, resultId, questionId, result, resultDesc) {
-      let that = this
-      that.disabled = true
-      if (result === resultDesc) {
-        that.totalMileage = that.totalMileage + that.questionData[this.mark].marketQuestionReward.rewardValue
-        that.checkTrue = true
-        that.checkDefault = false
-      } else {
-        that.checkError = true
-      }
-      that.answerResult.push(resultId)
-      that.questionList.push(questionId)
-    },
-    nextQuestion: function () {
-      if (this.mark === 4) {
-        this.nextText = '速速去抽奖'
-      } else {
-        this.mark++
-        this.disabled = false
-        this.checkTrue = false
-        this.checkError = false
-        this.checkDefault = true
+    btnClick (val,item,$index) {
+      this.disabled = true
+      this.choosedIndex = val.resultId
+      this.choosedId = val.resultId
+      this.choosedQuesId = val.questionId
+      if(val.resultDesc===item.result){
+        this.checkTrue = $index
+        store.commit('increment',item.marketQuestionReward.rewardValue)
+      }else{
+        this.checkTrue = $index===0 ? $index+1 :$index-1
+        this.checkError = $index
       }
     }
   }
