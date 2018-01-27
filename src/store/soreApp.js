@@ -1,23 +1,31 @@
 export default {
   state: {
-    totalMileage: 0,
-    mark: 0,
-    answerId: [],
-    quesId: []
+    totalMileageStore: 0,
+    markStore: 0,
+    answerIdStore: [],
+    quesIdStore: []
   },
   mutations: {
     increment (state,data) {
       state.totalMileage = state.totalMileage+data
     },
     showIndex (state) {
-      state.mark++
+      state.markStore++
     },
-    answerId (state,data) {
-      state.answerId.push(data.choosedId)
-      state.quesId.push(data.choosedQuesId)
+    answerIdStore (state,data) {
+      state.answerIdStore.push(data.choosedId)
+      state.quesIdStore.push(data.choosedQuesId)
     }
   },
   actions: {
-
+    inc (context,data) {
+      context.commit("increment",data);
+    },
+    ans (context,data) {
+      context.commit("answerIdStore",data);
+    },
+    sho (context) {
+      context.commit("showIndex");
+    }
   }
 }

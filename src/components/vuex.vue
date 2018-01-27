@@ -3,7 +3,7 @@
     <div class="wrap">
       <div class="answer_02">
         <div class="voice_img">
-          <audio src="../../static/video/music.ogg" autoplay="autoplay" loop="loop" id="audio_id"></audio>
+          <!--<audio src="../../static/video/music.ogg" autoplay="autoplay" loop="loop" id="audio_id"></audio>-->
           <img src="../../static/images/m01.png">
         </div>
       </div>
@@ -159,7 +159,6 @@ export default {
         this.checkTrue = $index
         store.commit('increment',item.marketQuestionReward.rewardValue)
       }else{
-        this.checkTrue = $index===0 ? $index+1 :$index-1
         this.checkError = $index
       }
     }
@@ -168,8 +167,7 @@ export default {
 </script>
 
 <style scoped>
-  @import '../style/demo.css';
   @import '../style/reset.css';
   @import '../style/answer.css';
-  @import '../style/draw.css';
+  @import '../style/demo.css';
 </style>

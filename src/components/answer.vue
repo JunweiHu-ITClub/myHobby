@@ -139,8 +139,7 @@ export default {
 </script>
 
 <style scoped>
-  @import '../style/demo.css';
   @import '../style/reset.css';
   @import '../style/answer.css';
-  @import '../style/draw.css';
+  @import '../style/demo.css';
 </style>

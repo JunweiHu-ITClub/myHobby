@@ -18,6 +18,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 var store = new Vuex.Store(storeObject)
 FastClick.attach(document.body)
+
 new Vue({
   el: '#app',
   store,

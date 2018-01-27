@@ -1,3 +1,8 @@
+<style scoped>
+  @import '../style/reset.css';
+  @import '../style/answer.css';
+  @import '../style/demo.css';
+</style>
 <template>
   <div>
     <div class="wrap">
@@ -10,7 +15,7 @@
       <div class="answer_03">
 
       </div>
-      <div v-for="(item,index) in questionData" v-show="index === mark">
+      <div v-for="(item,index) in questionData" v-show="index === markStore">
         <div class="answer_04">
           <ul>
             <li class="answer_list_active"></li>
@@ -29,7 +34,7 @@
           </div>
         </div>
         <div class="answer_05">
-          <div class="answer_question">
+          <div class="answer_question" >
             <span class="question_number">Q</span>
             <p class="question_con">{{item.questionDesc}}</p>
           </div>
@@ -50,7 +55,7 @@
     </div>
     <div class="clearfix"></div>
     <!-- 去登录弹框 -->
-    <div class="alert_wrap alert_already" style="display: none;">
+    <div class="alert_wrap alert_already" v-show="isTrue">
       <div class="alert_already_con">
         <span class="paper_clip"></span>
         <span class="colse gift_close"></span>
@@ -78,6 +83,7 @@ export default {
       disabled:false,
       checkTrue: -1,
       checkError: -1,
+      isTrue: false
     }
   },
   created () {
@@ -86,20 +92,20 @@ export default {
   },
   computed: {
     totalMileage () {
-      return this.$store.state.soreApp.totalMileage
+      return this.$store.state.soreApp.totalMileageStore
     },
-    mark (){
-      return this.$store.state.soreApp.mark
+    markStore (){
+      return this.$store.state.soreApp.markStore
     }
   },
   methods: {
     increment () {
       this.disabled = false
-      if(this.$store.state.soreApp.mark < 4){
+      if(this.$store.state.soreApp.markStore < 4){
         if(this.choosedIndex!=null){
           this.choosedIndex = null
-          this.$store.commit('answerId',{choosedId:this.choosedId,choosedQuesId:this.choosedQuesId})
-          this.$store.commit('showIndex')
+          this.$store.dispatch('ans', {choosedId:this.choosedId,choosedQuesId:this.choosedQuesId});
+          this.$store.dispatch('sho')
           this.checkTrue = -1
           this.checkError = -1
         }else{
@@ -107,6 +113,8 @@ export default {
         }
       }else{
         this.nextText = '速速去抽奖'
+        // this.isTrue = true
+        console.log(this.$store.state.soreApp.answerIdStore)
       }
     },
     listInit () {
@@ -127,9 +135,8 @@ export default {
       this.choosedQuesId = val.questionId
       if(val.resultDesc===item.result){
         this.checkTrue = $index
-        this.$store.commit('increment',item.marketQuestionReward.rewardValue)
+        this.$store.dispatch('inc', item.marketQuestionReward.rewardValue);
       }else{
-        this.checkTrue = $index===0 ? $index+1 :$index-1
         this.checkError = $index
       }
     }
@@ -137,9 +144,3 @@ export default {
 }
 </script>
 
-<style scoped>
-  @import '../style/demo.css';
-  @import '../style/reset.css';
-  @import '../style/answer.css';
-  @import '../style/draw.css';
-</style>

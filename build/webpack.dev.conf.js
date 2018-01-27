@@ -33,6 +33,7 @@ let jsonData={};
 for (var i in entryJS){
   let data = require(entryJS[i]);
   jsonData = Object.assign(jsonData, data);
+  console.log(entryJS)
 }
 
 app.use('/', apiRoutes)

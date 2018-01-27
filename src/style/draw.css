@@ -134,7 +134,6 @@
     position: fixed;
     z-index: 99999;
     top:0;
-    display: none;
 }
 .alert_wrap_con{
     width: 80.8%;
